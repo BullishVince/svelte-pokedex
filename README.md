@@ -12,10 +12,11 @@ Create a new SvelteKit project
 Init node_modules and install dependencies  
 ```bash
     cd svelte-pokedex ; npm i && npm i -D tailwindcss autoprefixer  
+``` 
 Config tailwindcss  
-```bash
+```bash  
     Script here :)  
-```
+```  
 ## Developing
 
 Once you've cloned the repository and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
