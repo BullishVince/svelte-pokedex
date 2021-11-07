@@ -1,39 +1,20 @@
 <script>
-    import {onMount} from 'svelte';
-    import ky from 'ky';
-
-    let pokemons = [];
-
-    onMount(async () => {
-        let url = 'https://pokeapi.co/api/v2/pokemon';
-        const data = await ky.get(url).json();
-
-        pokemons = data.results;
-    })
+    import {pokemon} from '../stores/pokestore';
+    import PokemanCard from '../components/pokemanCard.svelte';
+    console.log($pokemon);
 </script>
 
 <style>
     @import 'tailwindcss/dist/tailwind.css';
 </style>
 
-<div class="container py-8">
-    <ul class="grid sm:grid-cols-2 md:grid-cols-3 sm:col-gap-6 row-gap-4">
-      {#each pokemons as { name, url }, index (index)}
-      <li>
-        <article
-          class="flex flex-col items-center max-w-sm rounded overflow-hidden
-          shadow-lg"
-        >
-          <div class="px-6 py-4">
-            <h2 class="font-bold text-xl mb-2">{name}</h2>
-          </div>
-          <img
-            class="w-24 h-24"
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{index + 1}.png"
-            alt=""
-          />
-        </article>
-      </li>
-      {/each}
-    </ul>
-  </div>
+<svelte:head>
+  <title>Pokedex</title>
+</svelte:head>
+
+<h1 class="text-4xl text-center my-8 uppercase">SvelteKit Pokedex</h1>
+<div class="py-4 grid gap-4 md:grid-cols-2 grid-cols-1">
+  {#each $pokemon as pokeman}
+  <PokemanCard pokeman={pokeman}/>
+{/each}
+</div>
