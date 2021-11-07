@@ -10,6 +10,7 @@ Create a new SvelteKit project
 + Add Prettier for code formatting? > Yes  
 <br>
 Init node_modules and install dependencies  
+
 ```bash
     cd svelte-pokedex ; npm i && npm i -D tailwindcss autoprefixer  
 ``` 
