@@ -1,6 +1,8 @@
 # Pokedex made with SvelteKit
-## Important config I setup before I started digging into creating the actual pokedex app  
-Create a new SvelteKit project  
+## Setup
+Here's some config-steps I did before I started digging into creating the actual pokedex app  
+
+### Create a new SvelteKit project  
 ```bash
     npm init svelte@next svelte-pokedex  
 ``` 
@@ -8,16 +10,23 @@ Create a new SvelteKit project
 + Use Typescript? > No  
 + Add ESLint for code linting? > Yes  
 + Add Prettier for code formatting? > Yes  
-<br>
-Init node_modules and install dependencies  
+<br>  
+
+### Init node_modules and install dependencies  
 
 ```bash
     cd svelte-pokedex ; npm i && npm i -D tailwindcss autoprefixer  
 ``` 
-Config tailwindcss  
+### Config external dependencies 
+First we'll add a postcss config file and add the plugins needed
 ```bash  
-    Script here :)  
+    echo 'module.exports = {plugins: {autoprefixer: {},tailwindcss: {},}}' > postcss.config.cjs
 ```  
+The next thing we need is a tailwindcss config file which we'll initiate with the following command  
+```bash  
+    Insert script here :)
+``` 
+
 ## Developing
 
 Once you've cloned the repository and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
