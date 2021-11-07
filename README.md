@@ -24,8 +24,26 @@ First we'll add a postcss config file and add the plugins needed
 ```  
 The next thing we need is a tailwindcss config file which we'll initiate with the following command  
 ```bash  
-    Insert script here :)
-``` 
+    echo 'module.exports = {mode: 'jit',purge: ['./src/**/*.svelte']};' > tailwindcss.config.cjs
+```   
+
+Create a new svelte component called <strong>__layout.svelte</strong> with the following code;  
+```html
+<script>  
+    import Nav from '../components/nav.svelte';  
+</script>  
+<div class="p-8 max-w-6xl mx-auto">  
+     <Nav/> <!--The Nav component needs to exist in order for this to work-->  
+    <slot></slot>  
+</div>  
+  
+<style>  
+    @tailwind base;  
+    @tailwind components;  
+    @tailwind utilities;  
+</style>  
+```  
+That's it 😃 Now everything is setup and you can start to work on your web app  
 
 ## Developing
 
